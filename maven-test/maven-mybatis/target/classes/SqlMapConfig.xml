@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<!-- 必须提供头文件 -->
+<configuration>
+    <!-- 读取属性文件（jdbc.properties）
+        属性：
+            resource：从resource目录加载jdbc.properties文件
+            url:使用绝对路径加载文件
+    -->
+    <properties resource="jdbc.properties"></properties>
+
+    <!--设置日志输出底层执行代码-->
+    <settings>
+        <setting name="logImpl" value="STDOUT_LOGGING"/>
+    </settings>
+
+    <!--注册实体类别名注册-->
+    <typeAliases>
+        <!--单个实体类的别名-->
+        <!--<typeAlias type="xia.xiao.Student" alias="student"></typeAlias>-->
+        <!--批量注册别名：别名是类名的驼峰命名法-->
+        <package name="xia.xiao.pojo"/>
+        <package name="xia.xiao"/>
+    </typeAliases>
+
+    <!-- 配置数据库的环境变量（数据库的连接配置）
+        可有配置多个数据库的连接
+    -->
+    <environments default="development">
+        <!-- id属性是给default属性的作用 -->
+        <environment id="development">
+            <!-- 配置事务管理器
+             type:指定事务管理方式
+                JDBC：事务的控制交给程序员处理
+                MANAGED：由容器（Sprig）来管理事务
+             -->
+            <transactionManager type="JDBC"></transactionManager>
+            <!--配置数据源
+                type：指定不同的配置方式
+                    JNDI：Java命名目录接口，在服务器端进行数据库连接池的管理
+                    POOLED：使用数据库连接池
+                    UNPOLLED：不使用数据库连接池
+            -->
+            <dataSource type="POOLED">
+                <property name="driver" value="${jdbc.driverClassName}"/>
+                <property name="url" value="${jdbc.url}"/>
+                <property name="username" value="${jdbc.username}"/>
+                <property name="password" value="${jdbc.password}"/>
+            </dataSource>
+        </environment>
+        <!--<environment id="">
+            <transactionManager type=""></transactionManager>
+            <dataSource type=""></dataSource>
+        </environment>-->
+    </environments>
+
+    <!-- 注册Mapper.xml文件
+        resource:从resource文件下加载指定名称的文件
+        url：使用绝对路径加载文件
+        class：动态代理方式下的注册
+     -->
+    <mappers>
+        <mapper resource="StudentMapper.xml"></mapper>
+
+        <!--<mapper class="xia.xiao.mapper.StudentsMapper"></mapper>-->
+        
+        <!--批量注册-->
+        <package name="xia.xiao.mapper.*"/>
+    </mappers>
+
+</configuration>

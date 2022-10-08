@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="springmvc-01" />
+        <module name="spring-007-aspectj" />
+        <module name="spring-08-SM" />
+        <module name="maven-test01" />
+        <module name="maven-spring" />
+        <module name="maven-spring-sanceng-xml" />
+        <module name="maven-spring-aop" />
+        <module name="SSM" />
+        <module name="maven-jdk" />
+        <module name="maven-mybatis" />
+        <module name="maven-spring-sanceng" />
+        <module name="maven-spring-sanceng-annotation" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="maven-jdk" target="1.8" />
+      <module name="maven-JDKaction" target="1.7" />
+      <module name="maven-mybatis" target="1.8" />
+      <module name="maven-spring" target="1.8" />
+      <module name="maven-spring-aop" target="1.8" />
+      <module name="maven-spring-sanceng" target="1.8" />
+      <module name="maven-spring-sanceng-annotation" target="1.8" />
+      <module name="maven-spring-sanceng-xml" target="1.8" />
+      <module name="maven-test01" target="1.8" />
+      <module name="spring-007-aspectj" target="1.8" />
+      <module name="spring-08-SM" target="1.8" />
+      <module name="springmvc-01" target="1.8" />
+      <module name="SSM" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<!--作为动态代理的目标对象，要用代理对象去实现这里的功能-->
+<mapper namespace="xia.xiao.mapper.StudentsMapper">
+    <select id="getAll" resultType="student">
+        select id,name,email,age
+        from student
+    </select>
+
+    <select id="getById" parameterType="int" resultType="student">
+        select id,name,email,age
+        from student
+        where id=#{id}
+    </select>
+
+    <select id="getByName" parameterType="string" resultType="student">
+        select id,name,email,age
+        from student
+        where name like '%${name}%'
+    </select>
+
+    <!--优化后的模糊查询-->
+    <select id="getByNameGood" parameterType="string" resultType="student">
+        select id,name,email,age
+        from student
+        where name like concat('%',#{name},'%')
+    </select>
+
+    <update id="update" parameterType="student">
+        update student set name=#{name},email=#{email},age=#{age}
+        where id=#{id}
+    </update>
+
+    <!--
+        模糊用户名和地址查询
+        parameterType如果参数超过一个，则不写
+        List<Student> getByNameOrAddress(String columnName,String columnValue);
+    -->
+    <select id="getByNameOrAddress" resultType="student">
+        select id,name,email,age
+        from student
+        where ${columnName} like concat('%',#{columnValue},'%')
+    </select>
+
+    <!--插入返回结果主键值-->
+    <insert id="insert" parameterType="student">
+    <selectKey keyProperty="id" resultType="int" order="AFTER">
+        select last_insert_id()
+    </selectKey>
+        insert  into student (name,email,age) values (#{name},#{email},#{age})
+    </insert>
+
+    <!--
+        根据实体类中的成员变量是否有值来决定是否添加条件
+    -->
+    <select id="getByCondition" parameterType="student" resultType="student">
+        select name,email,age
+        from student
+        <where>
+            <if test="name != null and name !=''">
+                and name like concat('%',#{name},'%')
+            </if>
+            <if test="age != null and age !=''">
+                and age = #{age}
+            </if>
+        </where>
+    </select>
+
+    <!--有选择的更新-->
+    <update id="updateSet" parameterType="student">
+        update student
+        <set>
+            <if test="name != null and name != ''">
+                name = #{name},
+            </if>
+            <if test="email != null and email != ''">
+                email = #{email},
+            </if>
+            <if test="age != null and age != ''">
+                age = #{age},
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+
+    <!--查询多个指定id用户信息-->
+    <select id="getByIds"  resultType="student">
+        select name,email,age
+        from student
+        where id in
+            <foreach collection="array" item="id" separator="," open="(" close=")">
+                #{id}
+            </foreach>
+    </select>
+
+    <!--批量增加-->
+
+    <!--
+    查询指定年龄范围内的用户
+    List<Student> getByAge(Integer begin, Integer end);
+    -->
+    <select id="getByAge" resultType="student">
+        select name,email,age
+        from student
+        where age between #{arg0} and #{arg1}
+    </select>
+
+    <!--
+    入参是map
+    List<Student> getByMap(Map map);
+    #{ageBegin}：就是map中的key
+    -->
+    <select id="getByMap" resultType="student">
+        select name,email,age
+        from student
+        where age between #{ageBegin} and #{ageEnd}
+    </select>
+
+    <!--
+    返回值是map(一行)
+    Map getReturnMap(Integer id);
+    -->
+    <select id="getReturnMap" parameterType="int" resultType="map">
+        select name,age
+        from student
+        where id=#{id}
+    </select>
+
+    <!--
+    返回多行
+    -->
+    <select id="getReturnMaps" resultType="map">
+        select name,age
+        from student
+        where id between #{idBegin} and #{idEnd}
+    </select>
+
+    <!--&lt;!&ndash;使用resultMap手动完成映射
+    <resultMap id="bookmap" type="book">
+        主键绑定
+        <id property="id" column="bookid"></id>
+        非主键绑定
+        <result property="name" column="bookname"></result>
+    </resultMap>
+    <select id="getAll" resultMap="bookmap">
+        select bookid,bookname
+        from book
+    </select>-->
+
+
+</mapper>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$PROJECT_DIR$/maven-test01" />
+    <file type="web" url="file://$PROJECT_DIR$/springmvc-01" />
+    <file type="web" url="file://$PROJECT_DIR$/SSM" />
+  </component>
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/maven-test01/pom.xml" />
+        <option value="$PROJECT_DIR$/maven-myatis/pom.xml" />
+        <option value="$PROJECT_DIR$/maven-mybatis/pom.xml" />
+        <option value="$PROJECT_DIR$/maven-jdk/pom.xml" />
+        <option value="$PROJECT_DIR$/maven-spring/pom.xml" />
+        <option value="$PROJECT_DIR$/maven-spring-sanceng/pom.xml" />
+        <option value="$PROJECT_DIR$/maven-spring-sanceng-xml/pom.xml" />
+        <option value="$PROJECT_DIR$/maven-spring-sanceng-annotation/pom.xml" />
+        <option value="$PROJECT_DIR$/maven-spring-aop/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-007-aspectj/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-08-SM/pom.xml" />
+        <option value="$PROJECT_DIR$/springmvc-01/pom.xml" />
+        <option value="$PROJECT_DIR$/SSM/pom.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_16" project-jdk-name="JDK8" project-jdk-type="JavaSDK" />
+</project>

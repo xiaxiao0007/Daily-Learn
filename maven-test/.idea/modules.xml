@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/SSM/SSM.iml" filepath="$PROJECT_DIR$/SSM/SSM.iml" />
+      <module fileurl="file://$PROJECT_DIR$/maven-jdk/maven-jdk.iml" filepath="$PROJECT_DIR$/maven-jdk/maven-jdk.iml" />
+      <module fileurl="file://$PROJECT_DIR$/maven-mybatis/maven-mybatis.iml" filepath="$PROJECT_DIR$/maven-mybatis/maven-mybatis.iml" />
+      <module fileurl="file://$PROJECT_DIR$/maven-spring/maven-spring.iml" filepath="$PROJECT_DIR$/maven-spring/maven-spring.iml" />
+      <module fileurl="file://$PROJECT_DIR$/maven-spring-aop/maven-spring-aop.iml" filepath="$PROJECT_DIR$/maven-spring-aop/maven-spring-aop.iml" />
+      <module fileurl="file://$PROJECT_DIR$/maven-spring-sanceng/maven-spring-sanceng.iml" filepath="$PROJECT_DIR$/maven-spring-sanceng/maven-spring-sanceng.iml" />
+      <module fileurl="file://$PROJECT_DIR$/maven-spring-sanceng-annotation/maven-spring-sanceng-annotation.iml" filepath="$PROJECT_DIR$/maven-spring-sanceng-annotation/maven-spring-sanceng-annotation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/maven-spring-sanceng-xml/maven-spring-sanceng-xml.iml" filepath="$PROJECT_DIR$/maven-spring-sanceng-xml/maven-spring-sanceng-xml.iml" />
+      <module fileurl="file://$PROJECT_DIR$/maven-test01/maven-test01.iml" filepath="$PROJECT_DIR$/maven-test01/maven-test01.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-007-aspectj/spring-007-aspectj.iml" filepath="$PROJECT_DIR$/spring-007-aspectj/spring-007-aspectj.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-08-SM/spring-08-SM.iml" filepath="$PROJECT_DIR$/spring-08-SM/spring-08-SM.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springmvc-01/springmvc-01.iml" filepath="$PROJECT_DIR$/springmvc-01/springmvc-01.iml" />
+    </modules>
+  </component>
+</project>
