@@ -557,7 +557,7 @@ session.invalidate();
               xmlHttpRequest.onreadystatechange = function (){
   
                   /*alert("readyState="+xmlHttpRequest.readyState)*/
-  
+                  // 当readyState==4和HTTP协议的status == 200 状态码正确时，进行数据传输到前端中
                   if (xmlHttpRequest.readyState == 4 && xmlHttpRequest.status ==200){
                       // alert(xmlHttpRequest.responseText);
                       // 设置span标签的内容需要使用innerText
