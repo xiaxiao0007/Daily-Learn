@@ -32,7 +32,7 @@
 
     - 转发：是由web服务器来控制的。A资源跳转到B资源，这个跳转动作是Tomcat服务器内部完成的
 
-      ![](C:\Users\Xiaooo7\AppData\Roaming\Typora\typora-user-images\image-20220324190132791.png)
+      https://github.com/xiaxiao0007/Daily-Learn/blob/master/image-20220324190056579.png
 
     - 重定向：是浏览器完成的。具体跳转到那个资源，是浏览器说了算
 
