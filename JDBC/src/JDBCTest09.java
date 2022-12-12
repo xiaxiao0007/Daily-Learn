@@ -20,7 +20,7 @@ public class JDBCTest09 {
         ResultSet resultSet = null;
 
         try {
-            Class.forName(bundle.getString("driver"));
+            Class.forName(bundle.getString("driver"));//注册驱动
 
             connection = DriverManager.getConnection(bundle.getString("url"),
                     bundle.getString("user"), bundle.getString("password") );
